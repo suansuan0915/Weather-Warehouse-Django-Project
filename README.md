@@ -135,3 +135,8 @@ Cons:
   - `timeout`
   - `route`
   
+## Further Thinking
+Given the project is required to be submitted into 72 hours, some functionalities are yet to be explored, including:\
+- A user-friendly Interface. Field formats in the request url. Different metrics accept various format of values, users may need to remind themselves of different value formats and use correct value formats. If time allows, `static` folder can be added to include CSS and HTML templates, which provide users with buttons to select for their API request, instead of manually typing.
+- Request file format. We only include json format here. If time allows, more format would be accepted.
+- Real-time update of data warehouse. Now the database would be updated when users send requests. We can add a `realtime_update.py` so that the application can automatically download and update data in the database during specific intervals.
