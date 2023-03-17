@@ -116,14 +116,14 @@ Cons:
 - Mandatory Parameters:\
 [Details reference](https://www.meteomatics.com/en/api/available-parameters/)\
 `validdatetime`: datetime or datetime range for the data.\
+`location`: latitude and longitute of the location(s).\
 `parameters`: metric types of weather data, including metrics of wind, temperature, precipitation, sunlight, sealevel, etc.\
   - Wind metrics: `wind_speed_10m:ms`, `wind_dir_10m:d`, `wind_gusts_10m_1h:ms`, `wind_gusts_10m_24h:ms`
   - Temperature metrics: `t_2m:C`, `t_max_2m_24h:C`, `t_min_2m_24h:C`
   - Sealevel metrics: `msl_pressure:hPa`
   - Precipitation metrics: `precip_1h:mm`, `precip_24h:mm`
   - Weather symbols: `weather_symbol_1h:idx`, `weather_symbol_24h:idx`
-  - Sunlight metrics: `uv:idx`, `sunrise:sql`, `sunset:sql`\
-`location`: latitude and longitute of the location(s).
+  - Sunlight metrics: `uv:idx`, `sunrise:sql`, `sunset:sql`
 - Optional Parameters:\
 [Details reference](https://www.meteomatics.com/en/api/request/optional-parameters/)\
 'option_name': optional parameters of data. 
