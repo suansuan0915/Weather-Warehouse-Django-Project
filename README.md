@@ -18,6 +18,7 @@ PostgreSQL
 ├── README.md
 └── weather_warehouse/
     ├── manage.py
+    ├── requirements.txt
     ├── weather_data/
     │   ├── __init__.py
     │   ├── admin.py
@@ -40,7 +41,7 @@ PostgreSQL
         └── wsgi.py
 ```
 
-manage.py, weather_warehouse folder, and weather_data folder consist the project.
+manage.py, requirements.txt, weather_warehouse folder, and weather_data folder consist the project.
 - weather_warehouse folder
   - `settings.py`\
   Specifying settings and environment variables for the project.
