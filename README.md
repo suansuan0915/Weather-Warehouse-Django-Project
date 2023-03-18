@@ -63,6 +63,22 @@ manage.py, requirements.txt, weather_warehouse folder, and weather_data folder c
   - `urls.py`\
   Acting as routers for weather_data.
   
+#### Functions in Files
+Fetch data from API (*fetch_data* function in *fetch_data.py*), and clean it to pandas dataframe (*clean_data.py*), then validate internally (*internal_validate* function) and externally (*external_validate* function)\
+![image](https://user-images.githubusercontent.com/51430523/226077620-e802c3a7-2ec0-416d-ba7a-e1d1103d09ba.png)
+
+Build schema of tables in database (4 classes here in *models.py*)\
+![image](https://user-images.githubusercontent.com/51430523/226077645-8d5bc649-c5f9-468d-8a26-ff9c04b2cc7c.png)
+
+Insert data into long or wide format tables (*insert_long_table* and *insert_wide_table* functions)\
+![image](https://user-images.githubusercontent.com/51430523/226078121-e208dea7-8ba3-4cc7-b2b1-54cc819a866d.png)
+
+Build dynamic serializers for all four tables\
+![image](https://user-images.githubusercontent.com/51430523/226078233-26c82098-be72-4366-9ed6-57ab2aa10b92.png)
+
+Handle incoming request and return reponse (*WeatherDataView* class)\
+![image](https://user-images.githubusercontent.com/51430523/226078251-042849cc-a626-4081-8e96-902f47c2b12d.png)
+
 #### Database Introduction
 4 tables are created in the PostgreS database:
 - `Location` Table\
@@ -102,6 +118,7 @@ Pros:
 - Long format table acting as landing table makes it easier to check general validity when data arrives from outside API.
 
 Cons:
+- When storing all valus of parameters in a column of a long format table, the data types of value column must be converted to one type.
 - Limited scalability: Storing both "long" and "wide" formats can lead to increased storage requirements. Besides, large volumes of real-time updates can cause storage problem, especially for the relational database.
 - Data redundancy: Redundacy is stilled provided here, like repeated "location" and "datetimes".
 - Performance issues: The relational database table schema can suffer from slow query times and bad database performance, particularly when dealing with complex queries. 
