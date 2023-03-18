@@ -11,7 +11,7 @@ API_USERNAME = os.environ.get('API_USERNAME')
 API_PASSWORD = os.environ.get('API_PASSWORD')
 api_key = HTTPBasicAuth(API_USERNAME, API_PASSWORD)
 
-def fetch(api_key, times, parameters, locations, format='json', opt_params='model=mix&mask=land'):
+def fetch_data(api_key, times, parameters, locations, format='json', opt_params='model=mix&mask=land'):
     base_url = 'https://api.meteomatics.com'
     request_url = f'{base_url}/{times}/{parameters}/{locations}/{format}?{opt_params}'   
     response = requests.get(request_url, auth=api_key)
