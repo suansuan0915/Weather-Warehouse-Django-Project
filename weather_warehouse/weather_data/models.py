@@ -8,7 +8,7 @@ class LandingLong(models.Model):
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
     datetime = models.DateTimeField(null=True, blank=True)
     parameter = models.CharField(max_length=255, null=True, blank=True)
-    value = models.FloatField(null=True, blank=True)
+    value = models.CharField(max_length=255, null=True, blank=True)
     class Meta:
         unique_together = ('location', 'datetime', 'parameter')
 
