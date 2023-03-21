@@ -6,10 +6,6 @@ import json
 
 def check_date(df):
     date_str = df['date']
-    if type(date_str) == 'Str':
-        print('Type is string.')
-    elif type(date_str) == 'Timestamp':
-        date_str = str(date_str)
     date_format_regex = r"^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}:\d{2}Z)?$"
     is_valid_date_format = date_str.str.match(date_format_regex).all()
     if not is_valid_date_format:
